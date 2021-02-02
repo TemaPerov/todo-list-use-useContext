@@ -1,0 +1,21 @@
+/* .one{
+    color:red;
+} */
+
+.box{
+    min-width: 100%;
+    /* background-color: red; */
+}
+.textBox{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+ }
+ 
+ .title{
+    text-align: center;
+ }
+ .titleLi{
+    width: 100%;
+    text-align: center;
+  }

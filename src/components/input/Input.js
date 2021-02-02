@@ -3,7 +3,7 @@ import { AddNewTask } from "../../state";
 import styleInput from "./input.module.css";
 
 const Input = () => {
-  console.log(styleInput);
+
   const [value, setValue] = useState("");
   const [valTitle, setValTitle] = useState("");
 
@@ -17,10 +17,16 @@ const Input = () => {
   //
   const addTask = useContext(AddNewTask);
   //
+
   const sendText = () => {
-    addTask(value, valTitle);
-    setValue("");
-    setValTitle("");
+    if( value ===''|| valTitle === ''){
+      alert("всі поля мають бути заповнені")
+    }else{
+      addTask(value, valTitle);
+      setValue("");
+      setValTitle("");
+    }
+   
   };
   const sendEnter = (e) => {
     if (e.key === "Enter") {
@@ -28,15 +34,17 @@ const Input = () => {
     }
   };
   return (
-    <div>
-      <p className={styleInput.b}>hello</p>
+    <div className={styleInput.box}>
+      {/* <p className={styleInput.b}>hello</p> */}
       <input
+     
         type="text"
         value={valTitle}
         onChange={chengeValTitle}
         onKeyPress={sendEnter}
         placeholder={"Title"}
       />
+
       <input
         type="text"
         value={value}
@@ -44,7 +52,7 @@ const Input = () => {
         onKeyPress={sendEnter}
         placeholder={"Tasks"}
       />
-      <button type="button" className="btn btn-dark" onClick={sendText}>
+      <button type="button" className="btn btn-dark " onClick={sendText}>
         send
       </button>
     </div>

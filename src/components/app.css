@@ -1,20 +1,11 @@
 .main{
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   /* justify-content: center; */
    align-items: center;
-   
-}
-.titleLi{
-  width: 100%;
-  text-align: center;
-}
-.textBox{
-   width: 100%;
-   display: flex;
-   /* justify-content:space-between */
+   width: 40%;
+   min-height: 100vh;
+   background-color: chocolate;
+   margin: 0 auto;
 }
 
-.title{
-   text-align: center;
-}
